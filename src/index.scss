@@ -1,0 +1,261 @@
+$font-stack: -apple-system, BlinkMacSystemFont, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+$backgroundColorBody: #f5f5f5;
+$backgroundColor: #fff;
+$menuBGColor: rgb(54, 52, 52);
+$borderRadius: 0.50rem;
+$leftItemsHeight: 25vh;
+$feedColor: #b42bcc;
+$bodyItemDisplay: inline-block;
+$bodyItemFontWeight: bold;
+$bodyItemWidth: 1em;
+$bodyItemMarginLeft: -1.1em;
+$customBlue : #196bc2;
+$customGray: #ebeae7;
+
+body {
+    margin: 0;
+    width: 100%;
+    font-family: $font-stack;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: $backgroundColorBody;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.left{
+    width: 25%;
+    flex-direction: row;
+    margin: 2%;
+    .description{
+        background-image: linear-gradient(to right, #4697e8, #cd46e8, #d98e3f);
+        border-radius: $borderRadius;
+        height: $leftItemsHeight;
+        position: relative;
+        margin-bottom: 8%;
+        .des-items {
+            position: absolute;
+            bottom: 0;
+            left: 1.5rem;
+        }
+        p{
+            color: $backgroundColor;
+            font-weight:bold;
+        }
+        #feed-mentor{
+            font-size: 1.3em;
+        }
+    }
+    .tools{
+        margin-bottom: 8%;
+        border-radius: $borderRadius;
+        // height: $leftItemsHeight;
+        background-color: $backgroundColor;
+        padding: calc(1rem + 10px);
+        .tools-container{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .tools-items{
+            background-color: $customGray;
+            border-radius: $borderRadius;
+            margin: calc(0.5rem);
+            padding:0.005rem 1.2rem 0.005rem 1.2rem;
+            text-align: center;
+            font-size: 1.4em;
+            color: $customBlue;
+            font-weight: bold;
+            font-size: 0.9em;
+            cursor: pointer;
+        }
+        .tools-items-current{
+            background-color: $customBlue;
+            color: $backgroundColor;
+            border-radius: $borderRadius;
+            margin: calc(0.5rem);
+            padding:0.005rem 1.2rem 0.005rem 1.2rem;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            font-size: 0.9em;
+            cursor: pointer;
+        }
+    }
+
+    .roadmap{
+        border-radius: $borderRadius;
+        height: $leftItemsHeight;
+        background-color: $backgroundColor;
+        padding: 5% 5% 10% 5%;
+        .roadmap-item{
+            display: grid;
+            grid-template-columns: auto auto;
+            justify-content: space-between;
+        }
+        .roadmap-title{
+            font-size: 1.3rem;
+            font-weight: bold;  
+        }
+        .roadmap-link{
+            color: rgb(67, 67, 194);
+            
+        }
+        .roadmap-body p{
+            font-size: .98em;
+        }
+        .body-live{
+            text-shadow: 0 0 0#52d6eb;
+        }
+        .body-planned{
+            text-shadow: 0 0 0#d19d19;
+        }
+        .body-progress{
+            text-shadow: 0 0 0#b42bcc;
+        }
+        span{
+            font-size: 0.5rem;
+            color: transparent;  
+            margin-right: 1.1em;
+        }
+        
+    }
+}
+  
+.right{
+    width: 70%;
+    margin: 2%;
+    .menu {
+        background-color: $menuBGColor;
+        height: calc(7vh + 10px);
+        border-radius: $borderRadius;
+        display: grid;
+        grid-auto-columns: auto;
+        grid-template-columns: 80% 20%;
+        .menu-suggestion{
+            display: grid;
+            grid-template-columns: 10% 30% 40%;
+            flex-direction: row;
+            align-items: center;
+            .menu-suggestion-1 p{
+                font-size: 1.3em;
+                color: $backgroundColor;
+                padding-left: 50%;
+            }
+            .menu-suggestion-2{
+                color: $backgroundColor;
+                font-weight: 700;
+            }
+            .menu-suggestion-3{
+                display: grid;
+                grid-template-columns: auto auto;
+                p{
+                    color: #a6a6a6;
+                    font-weight: 400;
+                    font-size: 0.89em;
+
+                }
+                select{
+                    width: 80%;
+                    outline: none;
+                    background-color: transparent;
+                    border: none;
+                    color: $backgroundColor;
+                    margin-left: -9em;
+                }
+                select option{
+                    background-color: grey;
+                    border-radius: $borderRadius;
+                }
+            }
+        }
+
+        .menu-feedback{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            button{
+                background-color: $feedColor;
+                border-radius: $borderRadius;
+                color: $backgroundColor;
+                font-size: 0.90em;
+                width: 80%;
+                height: 60%;
+                border-width: 0;
+                span{
+                    font-size: 0.90rem; 
+                    margin-right: .3em; 
+                }
+            }
+        }
+    }
+    .feeds{
+        margin: 3% 0% 3% 0%;
+    }
+    .feeds-item{
+        background-color: $backgroundColor;
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: $borderRadius;
+        height: calc(14vh + 10px);
+        padding: 3%;
+        margin: 2.5% 0% 2.5% 0%;
+        .feeds-item-feed{
+            display: grid;
+            grid-template-columns: auto auto;
+            justify-content: space-between;
+            margin-top: -1em;
+            .feed-vote{
+                margin-top: 50%;
+                background-color: #ebeae7;
+                height: 20%;
+                padding: 0.5em;
+                border-radius: $borderRadius;
+                font-size: 0.9em;
+                align-items: center;
+                span{
+                    margin-top: 10rem;
+                    font-size: 0.9em;
+                }
+            }
+            .feed-details{
+                margin-left: 5%;
+                .feed-details-title{
+                    color: black;
+                    font-weight:900;
+                }
+                .feed-details-des{
+                    color: #c2c0c0;
+                    font-size: 00.89em;
+                }
+                .feed-details-tag{
+                    background-color:#ebeae7;
+                    border-radius: $borderRadius;
+                    padding:.6em;
+                    display: inline;
+                    text-align: center;
+                    color: $customBlue;
+                    font-weight: bold;
+                    font-size: 0.89em;
+                }
+            }
+        }
+        .feeds-item-comment{
+            font-weight: 700;
+            font-size: 1.1em;
+            p span{
+                font-size: 0.65em;
+                margin-top: 0.9em;
+                text-shadow: 0 0 0 rgb(211, 206, 206);
+                color: transparent;
+            }
+        }
+    }
+}
