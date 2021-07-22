@@ -1,7 +1,18 @@
 export const Menu=()=>{
+    const toggleSideBar=(e:React.MouseEvent<HTMLParagraphElement>)=>{
+        const drawer = document.getElementsByClassName("left")[0];
+        if(drawer!== null)
+        drawer.classList.toggle("open");
+        e.stopPropagation()
+        console.log('=====', drawer)
+    }
     return(
         <div className='menu'>
+            <div className='menu-handburger' onClick={toggleSideBar}>
+                <span>&#8801;</span>
+            </div>
             <div className='menu-suggestion'>
+
                 <div className='menu-suggestion-1'>
                     <p>&#9906;</p>
                 </div>
